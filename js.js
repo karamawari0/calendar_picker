@@ -1,6 +1,5 @@
 //Токен бота в телеграмме (нужно захешить, закодировать итд)
 const token = "5738529884:AAH5oLyeZ8ieuWFrj5DtRDXzO5i5tafFahg";
-
 //Задать стартовую дату и инициализировать календарь
 let startDate = new Date();
 new AirDatepicker("#airdatepicker", {
@@ -68,7 +67,7 @@ new AirDatepicker("#airdatepicker", {
       },
       onClick(dp) {
         console.log("button_pressed");
-        price.innerHTML == `ЦЕНА: XXX`
+        airdatepicker.value.length == 0
           ? alert("Вы не указали даты")
           : sendMessage(sum, token);
       },
