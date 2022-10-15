@@ -69,7 +69,7 @@ new AirDatepicker("#airdatepicker", {
       onClick(dp) {
         console.log("button_pressed");
         price.innerHTML == `ЦЕНА: XXX`
-          ? confirm("Вы не указали даты")
+          ? alert("Вы не указали даты")
           : sendMessage(sum, token);
       },
     },
