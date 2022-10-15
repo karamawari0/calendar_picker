@@ -98,3 +98,5 @@ function sendMessage(sum, token) {
   fetch(url).then((res) => console.log(res));
   confirm("Спасибо, за Ваш запрос! Мы свяжемся с Вами в ближайшее время!");
 }
+
+// review
