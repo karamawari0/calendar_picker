@@ -64,13 +64,13 @@ new AirDatepicker("#airdatepicker", {
     "today",
     {
       content(dp) {
-        return dp.opts.timepicker ? "Забронировать" : "Забронировать";
+        return "Забронировать";
       },
       onClick(dp) {
         console.log("button_pressed");
-        sendMessage(sum, token);
-        let viewDate = dp.viewDate;
-        let today = new Date();
+        price.innerHTML == `ЦЕНА: XXX`
+          ? console.log("but nothing happened")
+          : sendMessage(sum, token);
       },
     },
   ],
