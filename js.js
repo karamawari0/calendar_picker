@@ -5,7 +5,7 @@ let startDate = new Date();
 new AirDatepicker("#airdatepicker", {
   //Окрасить клетки календаря в разные цвета согласно ценовому периоду (пока не понял, как выбрать конкретный месяц + день, только месяц целиком)
   onRenderCell({ date, cellType }) {
-    if (cellType === "day" && date.getMonth() === 5) {
+    if (cellType === "day" && date.getMonth() === 9) {
       return {
         classes: "-emoji-cell-",
       };
@@ -16,10 +16,10 @@ new AirDatepicker("#airdatepicker", {
   onSelect({ date }) {
     //Если не заданы даты вывести "ЦЕНА: ХХХ"
     if (typeof date[0] == "undefined") {
-      document.getElementById("price").innerHTML = `ЦЕНА: XXX`;
+      return (document.getElementById("price").innerHTML = `ЦЕНА: XXX`);
     }
 
-    //Если заданы обе даты
+    //Если задана обе даты
     if (typeof date[1] !== "undefined") {
       sum = 0;
       var dateString = date[0];
@@ -33,24 +33,24 @@ new AirDatepicker("#airdatepicker", {
       momentObjT = momentObjT.hour(0);
       var m = moment();
       calcPrice(momentObjT);
-
       while (momentObj.isSame(momentObjT) == false) {
         m = momentObjT.subtract(1, "d");
         calcPrice(m);
       }
-      console.log(sum);
-      document.getElementById("price").innerHTML = `ЦЕНА: ${sum} РУБЛЕЙ`;
-    } else if (typeof date[0] !== "undefined") {
-      sum = 0;
-      var dateString = date[0];
-      var dateObj = new Date(dateString);
-      var momentObj = moment(dateObj);
-      momentObj = momentObj.hour(0);
-
-      calcPrice(momentObj);
-      console.log(sum);
-      document.getElementById("price").innerHTML = `ЦЕНА: ${sum} РУБЛЕЙ`;
+      console.log(sum.toLocaleString);
+      return (document.getElementById(
+        "price"
+      ).innerHTML = `ЦЕНА: ${sum} РУБЛЕЙ`);
     }
+
+    sum = 0;
+    var dateString = date[0];
+    var dateObj = new Date(dateString);
+    var momentObj = moment(dateObj);
+    momentObj = momentObj.hour(0);
+    calcPrice(momentObj);
+    console.log(sum);
+    document.getElementById("price").innerHTML = `ЦЕНА: ${sum} РУБЛЕЙ`;
   },
 
   //Диапазон дат и вид разделителя

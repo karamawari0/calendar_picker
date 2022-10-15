@@ -717,11 +717,11 @@
 }
 
 .-emoji-cell- {
-  background-color: rgba(0, 122, 160, 0.21);
+  background-color: rgba(207, 151, 105, 0.05);
 }
 
 .-emoji-cell-:hover:after {
-  content: "wow";
+  content: "900₽";
   position: absolute;
   left: 20px;
   top: -14px;
